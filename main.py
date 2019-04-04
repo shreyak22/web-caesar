@@ -29,9 +29,9 @@ form = '''
       <!-- create your form here -->
       <form method="post">
         
-            <label>Rotate by:</label>
+            <label for="rot">Rotate by:</label>
             <input type="text" name="rot" value="0" >
-            <textarea id="blog" name="text" rows="5" cols="30">
+            <textarea name="text" type="text">
             {0}
             </textarea>
             <input type="submit" >
@@ -45,7 +45,7 @@ form = '''
 '''
 @app.route("/")
 def index():
-    return form.format()
+    return form.format("")
 
 @app.route("/", methods=['POST'])
 def encrypt():
